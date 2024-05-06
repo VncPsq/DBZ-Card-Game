@@ -1,8 +1,12 @@
-@use "variables";
+@use "../../assets/style/variables";
 
 .game {
   width: 90%;
   margin: 0 auto;
+
+  h2 {
+    margin-top: 10rem;
+  }
 
   // component Scoreboard
   .scoreboard {

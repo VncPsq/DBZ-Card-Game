@@ -1,0 +1,29 @@
+@use "../../assets/style/variables";
+
+.home {
+  width: 90%;
+  margin: 0 auto;
+  .hero {
+    margin-top: 3rem;
+    position: relative;
+    .imgBg {
+      width: 100%;
+      mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
+    }
+
+    .contentHero {
+      position: absolute;
+      top: 70%;
+      left: 5%;
+      .imgLogo {
+        width: 20rem;
+        display: block;
+      }
+    }
+  }
+  @media screen and (min-width: 799px) {
+    .hero {
+      margin-top: 3rem;
+    }
+  }
+}

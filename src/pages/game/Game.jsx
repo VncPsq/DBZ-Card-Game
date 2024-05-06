@@ -1,5 +1,5 @@
-import FrontCard from "../components/FrontCard";
-import ScoreBoard from "../components/ScoreBoard";
+import FrontCard from "../../components/features/FrontCard";
+import ScoreBoard from "../../components/features/ScoreBoard";
 
 function Game() {
   return (
