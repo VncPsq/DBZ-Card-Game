@@ -1,19 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Nav from "../components/parts/Nav";
 import "../assets/style/index.scss";
-import "../assets/style/game.scss";
-import gohan_kid from "../assets/img/gohan_kid.webp";
+import "../pages/game/game.scss";
+import "../pages/home/home.scss";
 
 function App() {
   return (
     <>
-      <nav>
-        <img src={gohan_kid} alt="Gohan" />
-        <div className="navigation">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/game">Game</Link>
-        </div>
-      </nav>
+      <Nav />
       <main>
         <Outlet />
       </main>

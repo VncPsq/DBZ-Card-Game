@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import dbzLogo from "../assets/img/dbzLogo.png";
+import dbzLogo from "../../assets/img/dbzLogo.png";
 
 function FrontCard() {
   const [characters, setCharacters] = useState([]);

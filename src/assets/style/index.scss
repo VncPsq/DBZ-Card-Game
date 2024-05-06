@@ -35,32 +35,46 @@
       font-family: variables.$font-title;
     }
 
+    button {
+      padding: 0.6rem 1rem;
+      border-radius: 0.6rem;
+      color: variables.$font-color;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: variables.$ball-color;
+    }
+
     nav {
-      display: none;
+      background-color: variables.$ball-color;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23040926' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+      position: fixed;
+      top: 0;
+      z-index: 30;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+
+      .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      img {
+        width: 2rem;
+      }
     }
   }
 
   @media screen and (min-width: 799px) {
     body {
       nav {
-        display: block;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 5rem;
-        background-color: variables.$items-color;
-        .navigation {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 1.5rem;
-        }
-
-        img {
-          width: 3rem;
-        }
+        padding: 0.5rem 5rem;
       }
     }
   }
