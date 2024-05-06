@@ -1,179 +1,287 @@
 @use "variables";
 
-// scoreboard
+.game {
+  width: 90%;
+  margin: 0 auto;
 
-.scoreboard {
-  width: 1024px;
-
-  @keyframes dragonBalls-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .dragonBalls {
-      animation: dragonBalls-spin infinite 30s linear;
-    }
-  }
-
-  .dragonBalls {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 100%;
-    transform: rotate(0deg);
-
-    img {
-      width: 3rem;
-    }
-
-    .turtleMaster {
-      background-color: variables.$ball-color;
-      position: absolute;
-      top: 40.6%;
-      left: 40%;
-      border-radius: 100%;
-      width: 3rem;
-      height: 3rem;
-
-      :hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
-      }
-    }
-
-    div:nth-of-type(1) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(0deg);
-    }
-
-    div:nth-of-type(2) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(51.4deg);
-    }
-
-    div:nth-of-type(3) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(102.8deg);
-    }
-
-    div:nth-of-type(4) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(154.2deg);
-    }
-
-    div:nth-of-type(5) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(205.6deg);
-    }
-
-    div:nth-of-type(6) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(257deg);
-    }
-
-    div:nth-of-type(7) {
-      position: absolute;
-      left: 38.5%;
-      height: 100%;
-      padding: 0.3rem;
-      transform: rotate(308deg);
-    }
-  }
-}
-
-// cards de personnages
-figure {
-  position: relative;
-  width: 300px;
-  height: 450px;
-  border-width: 12px;
-  overflow: hidden;
-  border-style: solid;
-  clip-path: inset(0 round 10px);
-  border-image: linear-gradient(
-      to right,
-      variables.$primary-color-card,
-      variables.$secondary-color-card
-    )
-    1;
-
-  .wrapperCard {
+  // component Scoreboard
+  .scoreboard {
+    margin-bottom: 3rem;
+    background-color: variables.$font-color;
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23251351' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    overflow-y: hidden;
+    padding: 1.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    gap: 3rem;
+    border-radius: 1.2rem;
+    border: 3px solid variables.$ball-color;
 
-  .wrapperCard::before {
-    content: "";
-    position: absolute;
-    background-color: darkblue;
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-  }
-
-  .wrapperCard .bodyCard {
-    z-index: 3;
-    .imgCharacter {
-      position: absolute;
-      width: 100%;
-      left: 0px;
-      top: 80px;
+    @keyframes dragonBalls-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
-    .idCharacter {
-      background-color: variables.$primary-color-card;
-      font-family: variables.$font-title;
-      font-size: 1.3rem;
-      text-align: center;
-      width: 2rem;
-      height: 2rem;
-      padding: 0.2rem;
+
+    @media (prefers-reduced-motion: no-preference) {
+      .dragonBalls {
+        animation: dragonBalls-spin infinite 30s linear;
+      }
+    }
+
+    .dragonBalls {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
       border-radius: 100%;
-      position: absolute;
-      top: 90%;
-      left: 80%;
-      box-shadow: 4px 2px 10px variables.$secondary-color-card;
+      transform: rotate(0deg);
+
+      img {
+        width: 2rem;
+      }
+
+      .turtleMaster {
+        background-color: variables.$ball-color;
+        position: absolute;
+        top: 40.6%;
+        left: 40%;
+        border-radius: 100%;
+        width: 2rem;
+        height: 2rem;
+
+        :hover {
+          filter: drop-shadow(0 0 2em #646cffaa);
+        }
+      }
+
+      div:nth-of-type(1) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(0deg);
+      }
+
+      div:nth-of-type(2) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(51.4deg);
+      }
+
+      div:nth-of-type(3) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(102.8deg);
+      }
+
+      div:nth-of-type(4) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(154.2deg);
+      }
+
+      div:nth-of-type(5) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(205.6deg);
+      }
+
+      div:nth-of-type(6) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(257deg);
+      }
+
+      div:nth-of-type(7) {
+        position: absolute;
+        left: 38.5%;
+        height: 100%;
+        padding: 0.3rem;
+        transform: rotate(308deg);
+      }
+    }
+
+    .score {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: variables.$font-color-bis;
+      }
+    }
+
+    .wrapperAvatar {
+      max-height: 200px;
+      max-width: 300px;
+      .avatar {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      color: variables.$font-color-bis;
     }
   }
-  .wrapperCard .headerCard {
-    z-index: 4;
-    width: 95%;
-    padding-top: 0.5rem;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
 
-    .characterName {
-      font-family: variables.$font-title;
-      font-size: 2rem;
+  // component Playground
+  .playground {
+    padding: 1.2rem;
+    background-color: variables.$font-color;
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23251351' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    border-radius: 1.2rem;
+    border: 3px solid variables.$ball-color;
+    display: grid;
+    overflow-x: scroll;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-auto-flow: column;
+    gap: 20px;
+
+    // cards de personnages
+    figure {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      border-width: 12px;
+      overflow: hidden;
+      border-style: solid;
+      clip-path: inset(0 round 10px);
+      border-image: linear-gradient(
+          to right,
+          variables.$primary-color-card,
+          variables.$secondary-color-card
+        )
+        1;
+
+      .wrapperCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wrapperCard::before {
+        content: "";
+        position: absolute;
+        background-color: darkblue;
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+      }
+
+      .wrapperCard .bodyCard {
+        z-index: 3;
+        .imgCharacter {
+          position: absolute;
+          width: 100%;
+          left: 0px;
+          top: 60px;
+        }
+        .idCharacter {
+          background-color: variables.$primary-color-card;
+          font-family: variables.$font-title;
+          font-size: 1.3rem;
+          text-align: center;
+          width: 2rem;
+          height: 2rem;
+          padding: 0.2rem;
+          border-radius: 100%;
+          position: absolute;
+          top: 85%;
+          left: 75%;
+          box-shadow: 4px 2px 10px variables.$secondary-color-card;
+        }
+      }
+      .wrapperCard .headerCard {
+        z-index: 4;
+        width: 95%;
+        padding-top: 0.5rem;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .characterName {
+          font-family: variables.$font-title;
+          font-size: 1.4rem;
+        }
+        .imgLogo {
+          width: 30%;
+        }
+      }
     }
+  }
 
-    .imgLogo {
-      width: 30%;
+  // media queries desktop
+  @media screen and (min-width: 799px) {
+    .scoreboard {
+      height: 300px;
+      overflow-y: hidden;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .wrapperAvatar {
+        max-height: 100%;
+        width: 300px;
+      }
+
+      .dragonBalls {
+        width: 15rem;
+        height: 15rem;
+
+        img {
+          width: 3rem;
+        }
+
+        .turtleMaster {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+    .playground {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      // cards de personnages
+      figure {
+        width: 300px;
+        height: 450px;
+
+        .wrapperCard .bodyCard {
+          .imgCharacter {
+            top: 80px;
+          }
+          .idCharacter {
+            top: 90%;
+            left: 80%;
+          }
+        }
+        .wrapperCard .headerCard {
+          .characterName {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 }

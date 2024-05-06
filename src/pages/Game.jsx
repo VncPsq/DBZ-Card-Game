@@ -3,14 +3,15 @@ import ScoreBoard from "../components/ScoreBoard";
 
 function Game() {
   return (
-    <>
-      <div className="grid">
+    <section className="game">
+      <h2>Ready to play ?</h2>
+      <article>
         <ScoreBoard />
-      </div>
-      <div className="grid">
+      </article>
+      <article className="playground">
         <FrontCard />
-      </div>
-    </>
+      </article>
+    </section>
   );
 }
 

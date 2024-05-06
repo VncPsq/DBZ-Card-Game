@@ -1,4 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
+import "../assets/style/index.scss";
+import "../assets/style/game.scss";
 import gohan_kid from "../assets/img/gohan_kid.webp";
 
 function App() {
