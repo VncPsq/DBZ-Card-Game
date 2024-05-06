@@ -8,7 +8,7 @@ function Game() {
       <article>
         <ScoreBoard />
       </article>
-      <article>
+      <article className="playground">
         <FrontCard />
       </article>
     </section>
