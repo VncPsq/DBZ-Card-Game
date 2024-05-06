@@ -4,14 +4,43 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-body {
-  background-color: variables.$bg-color;
-}
+  body {
+    background-color: variables.$bg-color;
 
-section {
-  background-color: variables.$items-color;
+    color: variables.$font-color;
+    a {
+      text-decoration: none;
+      color: variables.$font-color;
+      font-family: variables.$font-title;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5rem;
+      background-color: variables.$items-color;
+      position: fixed;
+      z-index: 999;
+      .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      img {
+        width: 3rem;
+      }
+    }
+
+    section {
+      background-color: variables.$items-color;
+    }
+  }
 }
 
 .grid {

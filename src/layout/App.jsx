@@ -1,15 +1,20 @@
-import FrontCard from "../components/FrontCard";
-import ScoreBoard from "../components/ScoreBoard";
+import { Link, Outlet } from "react-router-dom";
+import gohan_kid from "../assets/img/gohan_kid.webp";
 
 function App() {
   return (
     <>
-      <div className="grid">
-        <ScoreBoard />
-      </div>
-      <div className="grid">
-        <FrontCard />
-      </div>
+      <nav>
+        <img src={gohan_kid} alt="Gohan" />
+        <div className="navigation">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/game">Game</Link>
+        </div>
+      </nav>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }

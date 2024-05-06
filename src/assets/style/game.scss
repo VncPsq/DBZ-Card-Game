@@ -108,10 +108,10 @@ figure {
   position: relative;
   width: 300px;
   height: 450px;
-  color: azure;
   border-width: 12px;
   overflow: hidden;
   border-style: solid;
+  clip-path: inset(0 round 10px);
   border-image: linear-gradient(
       to right,
       variables.$primary-color-card,
