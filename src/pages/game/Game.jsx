@@ -1,5 +1,5 @@
-import FrontCard from "../../components/features/FrontCard";
 import ScoreBoard from "../../components/features/ScoreBoard";
+import Playground from "../../components/parts/Playground";
 
 function Game() {
   return (
@@ -9,8 +9,9 @@ function Game() {
         <ScoreBoard />
       </article>
       <article className="playground">
-        <FrontCard />
+        <Playground />
       </article>
+
     </section>
   );
 }
