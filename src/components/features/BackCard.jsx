@@ -1,10 +1,10 @@
+import shenron from "../../assets/img/shenronBack.png";
+
 function BackCard({ flipCard }) {
   return (
     <figure onClick={flipCard}>
-      <section className="wrapperCard">
-        <article className="headerCard">
-          <h3 className="characterName">bob</h3>
-        </article>
+      <section className="wrapperBackCard">
+        <img alt="Sheiron" src={shenron} />
       </section>
     </figure>
   );
