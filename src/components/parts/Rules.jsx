@@ -1,5 +1,6 @@
 import { useState } from "react";
 import kaio from "../../assets/img/Kaio_del_Norte.webp";
+import Button from "../../components/utilities/Button";
 
 function Rules() {
   const [showRules, setShowRules] = useState(false);
@@ -53,6 +54,7 @@ function Rules() {
             You will have 7 chances to make to bigger score possible, Good Luck
             !
           </p>
+          <Button>Play the game</Button>
         </>
       )}
     </section>

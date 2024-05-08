@@ -17,7 +17,7 @@ function Card({ character }) {
       flipDirection="horizontal"
     >
       <BackCard character={character} flipCard={flipCard} />
-      <FrontCard character={character} flipCard={flipCard} />
+      <FrontCard character={character}  />
     </ReactCardFlip>
   );
 }

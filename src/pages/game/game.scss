@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     border-radius: 1.2rem;
     border: 3px solid variables.$ball-color;
 
@@ -38,13 +38,13 @@
 
     .dragonBalls {
       position: relative;
-      width: 10rem;
-      height: 10rem;
+      width: 11rem;
+      height: 11rem;
       border-radius: 100%;
       transform: rotate(0deg);
 
       img {
-        width: 2rem;
+        width: 2.5rem;
       }
 
       .turtleMaster {
@@ -53,8 +53,8 @@
         top: 40.6%;
         left: 40%;
         border-radius: 100%;
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
 
         :hover {
           filter: drop-shadow(0 0 2em #646cffaa);
@@ -158,7 +158,8 @@
     }
     // cards de personnages
     figure {
-      cursor: pointer;
+      cursor: url(https://cdn.custom-cursor.com/db/15083/32/dragon-ball-super-saiyan-blue-goku-pointer.png),
+        pointer !important;
       position: relative;
       width: 200px;
       height: 300px;
@@ -250,7 +251,9 @@
   // media queries desktop
   @media screen and (min-width: 799px) {
     .scoreboard {
+      padding: 1.2rem 3.6rem;
       height: 300px;
+      gap: 2rem;
       overflow-y: hidden;
       flex-direction: row;
       align-items: center;
