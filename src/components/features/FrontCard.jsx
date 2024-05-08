@@ -39,7 +39,7 @@ function FrontCard({ character, flipCard }) {
     >
       <section className="wrapperCard">
         <article className="headerCard">
-          <h3 className="characterName">{truncName(character.name, 12)}</h3>
+          <h4 className="characterName">{truncName(character.name, 12)}</h4>
           <img className="imgLogo" src={dbzLogo} />
         </article>
         <article className="bodyCard">

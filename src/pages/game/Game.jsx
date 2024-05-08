@@ -1,4 +1,4 @@
-import ScoreBoard from "../../components/features/ScoreBoard";
+import ScoreBoard from "../../components/parts/ScoreBoard";
 import Playground from "../../components/parts/Playground";
 
 function Game() {
@@ -11,7 +11,6 @@ function Game() {
       <article className="playground">
         <Playground />
       </article>
-
     </section>
   );
 }

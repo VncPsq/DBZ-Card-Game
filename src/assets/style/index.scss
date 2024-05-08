@@ -15,18 +15,32 @@
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       font-family: variables.$font-title;
+      color: variables.$font-color;
     }
 
+    h1 {
+      margin: 1rem 2rem 1rem;
+      font-size: 3.2rem;
+    }
     h2 {
       margin-top: 1rem;
       font-size: 3rem;
       margin-bottom: 2rem;
     }
 
-    p {
+    h3 {
+      font-size: 2.2rem;
+      color: variables.$font-color-bis;
+    }
+
+    p,
+    figcaption {
+      margin: 2rem 0;
       font-family: variables.$font-text;
+      line-height: 2rem;
     }
 
     a {
@@ -38,11 +52,20 @@
     button {
       padding: 0.6rem 1rem;
       border-radius: 0.6rem;
-      color: variables.$font-color;
+      border: 1px solid variables.$cloud-color;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .btnPrimary {
+      color: variables.$font-color;
       background-color: variables.$ball-color;
+    }
+
+    .btnSecondary {
+      color: variables.$ball-color;
+      background-color: variables.$font-color;
     }
 
     nav {

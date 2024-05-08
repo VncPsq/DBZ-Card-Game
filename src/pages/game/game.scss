@@ -11,7 +11,7 @@
   // component Scoreboard
   .scoreboard {
     margin-bottom: 3rem;
-    background-color: variables.$font-color;
+    background-color: variables.$cloud-color;
     overflow-y: hidden;
     padding: 1.2rem;
     display: flex;
@@ -137,17 +137,12 @@
         width: 100%;
       }
     }
-
-    h3 {
-      font-size: 2.2rem;
-      color: variables.$font-color-bis;
-    }
   }
 
   // component Playground
   .playground {
     padding: 2rem;
-    background-color: variables.$font-color;
+    background-color: variables.$cloud-color;
     border-radius: 1.2rem;
     border: 3px solid variables.$ball-color;
     display: grid;
@@ -163,6 +158,7 @@
     }
     // cards de personnages
     figure {
+      cursor: pointer;
       position: relative;
       width: 200px;
       height: 300px;
@@ -217,6 +213,8 @@
           background-color: variables.$primary-color-card;
           font-family: variables.$font-title;
           font-size: 1.3rem;
+          margin: 0;
+          line-height: 1.4;
           text-align: center;
           width: 2rem;
           height: 2rem;
