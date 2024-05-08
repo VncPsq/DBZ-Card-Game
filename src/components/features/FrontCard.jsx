@@ -1,6 +1,6 @@
 import dbzLogo from "../../assets/img/dbzLogo.png";
 
-function FrontCard({ character, flipCard }) {
+function FrontCard({ character }) {
   // Define the bg Card
   function setBackground(affiliation) {
     switch (affiliation) {
@@ -30,7 +30,6 @@ function FrontCard({ character, flipCard }) {
 
   return (
     <figure
-      onClick={flipCard}
       style={{
         backgroundImage: `${setBackground(character.affiliation)}`,
         backgroundPosition: "center",
