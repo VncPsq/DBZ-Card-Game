@@ -1,29 +1,65 @@
 @use "../../assets/style/variables";
 
 .home {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+
   .hero {
-    margin-top: 3rem;
+    height: 600px;
     position: relative;
-    .imgBg {
-      width: 100%;
-      mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
-    }
 
     .contentHero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 1rem;
+      align-items: center;
+      background: linear-gradient(transparent, variables.$items-color);
       position: absolute;
-      top: 70%;
-      left: 5%;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       .imgLogo {
-        width: 20rem;
-        display: block;
+        width: 8rem;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
       }
     }
   }
+
+  .rules {
+    margin: 0 auto;
+    width: 90%;
+    padding: 2rem;
+    background-color: variables.$cloud-color;
+    border-radius: 1.2rem;
+    border: 3px solid variables.$ball-color;
+    color: variables.$font-color-bis;
+  }
+
   @media screen and (min-width: 799px) {
     .hero {
       margin-top: 3rem;
+
+      .contentHero {
+        h1 {
+          font-size: 6rem;
+        }
+
+        .imgLogo {
+          width: 12rem;
+        }
+
+        .buttons {
+          flex-direction: row;
+          gap: 1.2rem;
+        }
+      }
     }
   }
 }

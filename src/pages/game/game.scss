@@ -11,7 +11,7 @@
   // component Scoreboard
   .scoreboard {
     margin-bottom: 3rem;
-    background-color: variables.$font-color;
+    background-color: variables.$cloud-color;
     overflow-y: hidden;
     padding: 1.2rem;
     display: flex;
@@ -147,7 +147,7 @@
   // component Playground
   .playground {
     padding: 2rem;
-    background-color: variables.$font-color;
+    background-color: variables.$cloud-color;
     border-radius: 1.2rem;
     border: 3px solid variables.$ball-color;
     display: grid;
@@ -163,6 +163,7 @@
     }
     // cards de personnages
     figure {
+      cursor: pointer;
       position: relative;
       width: 200px;
       height: 300px;
