@@ -4,13 +4,17 @@ const GameContext = createContext();
 
 export function GameProvider({ children }) {
   const [startGame, setStartGame] = useState(false);
+  const [spinDragonBall, setSpinDragonBall] = useState(false);
 
   const handleStartGame = () => {
     setStartGame(!startGame);
+    setSpinDragonBall(true);
   };
 
   return (
-    <GameContext.Provider value={{ startGame, handleStartGame }}>
+    <GameContext.Provider
+      value={{ startGame, handleStartGame, spinDragonBall }}
+    >
       {children}
     </GameContext.Provider>
   );

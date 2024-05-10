@@ -8,11 +8,18 @@ import ball7 from "../../assets/img/dragonballs/ball7.png";
 import turtleMaster from "../../assets/img/tortueGeniale.png";
 import goku_normal from "../../assets/img/goku_normal.webp";
 
-function ScoreBoard() {
+function ScoreBoard({ handleStartGame, spinDragonBall }) {
   return (
     <article>
       <section className="scoreboard">
-        <article className="dragonBalls">
+        <article
+          className="dragonBalls"
+          style={
+            spinDragonBall === true
+              ? { animation: "dragonBalls-spin infinite 30s linear" }
+              : { animation: "none" }
+          }
+        >
           <div>
             <img src={ball1} alt="DragonBall *" />
           </div>
@@ -45,7 +52,12 @@ function ScoreBoard() {
           <p>Level 1</p>
         </article>
         <article className="wrapperAvatar">
-          <img className="avatar" src={goku_normal} alt="Goku" />
+          <img
+            className="avatar"
+            onClick={handleStartGame}
+            src={goku_normal}
+            alt="Goku"
+          />
         </article>
       </section>
     </article>
