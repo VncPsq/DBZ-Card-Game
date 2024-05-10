@@ -7,6 +7,7 @@ export function ApiProvider({ children }) {
   const [isLoadingApi, setIsLoadingApi] = useState(true);
   const [gokuTransfo, setGokuTransfo] = useState([]);
   const [isLoadingGoku, setIsLoadingGoku] = useState(true);
+  const [shuffle, setShuffle] = useState([]);
 
   useEffect(() => {
     // Fetch all the characters
@@ -19,6 +20,12 @@ export function ApiProvider({ children }) {
       })
       .then((items) => {
         const characters = items.items;
+        const bulma = characters.filter(
+          (character) => character.name === "Bulma"
+        );
+        const freezer = characters.filter(
+          (character) => character.name === "Freezer"
+        );
         setCharacters(characters);
         setIsLoadingApi(false);
       })
@@ -39,7 +46,6 @@ export function ApiProvider({ children }) {
         setGokuTransfo(gokuTransfo);
         setIsLoadingGoku(false);
       })
-
       .catch((error) => {
         console.error("Error fetching data", error);
       });
