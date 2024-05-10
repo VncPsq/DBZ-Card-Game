@@ -255,16 +255,7 @@
       width: 100%;
       height: 100%;
       background-color: variables.$cloud-color;
-
-      .modaleContent {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+      opacity: 0.5;
     }
   }
 
