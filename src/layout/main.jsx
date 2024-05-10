@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
 import Game from "../pages/game/Game";
+import { GameProvider } from "../contexts/GameContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ApiProvider>
-      <RouterProvider router={router} />
+      <GameProvider>
+        <RouterProvider router={router} />
+      </GameProvider>
     </ApiProvider>
   </React.StrictMode>
 );
