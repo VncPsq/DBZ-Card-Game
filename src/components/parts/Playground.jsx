@@ -1,16 +1,18 @@
 import { useApi } from "../../contexts/ApiContext";
+import { useGame } from "../../contexts/GameContext";
 
 import Card from "../features/Card";
 
-function Playground({ startGame }) {
-  const { characters, isLoading } = useApi();
+function Playground() {
+  const { characters, isLoadingApi } = useApi();
+  const { startGame } = useGame();
 
   return (
     <article
       className="playground"
       style={!startGame ? { overflow: "hidden" } : { overflow: "auto" }}
     >
-      {!isLoading ? (
+      {!isLoadingApi ? (
         characters.map((character) => (
           <Card
             key={`Card ${character.id} | ${character.name}`}

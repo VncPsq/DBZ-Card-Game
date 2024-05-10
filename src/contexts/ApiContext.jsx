@@ -4,8 +4,9 @@ const ApiContext = createContext();
 
 export function ApiProvider({ children }) {
   const [characters, setCharacters] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingApi, setIsLoadingApi] = useState(true);
   const [gokuTransfo, setGokuTransfo] = useState([]);
+  const [isLoadingGoku, setIsLoadingGoku] = useState(true);
 
   useEffect(() => {
     // Fetch all the characters
@@ -19,7 +20,7 @@ export function ApiProvider({ children }) {
       .then((items) => {
         const characters = items.items;
         setCharacters(characters);
-        setIsLoading(false);
+        setIsLoadingApi(false);
       })
       .catch((error) => {
         console.error("Error fetching data", error);
@@ -36,7 +37,7 @@ export function ApiProvider({ children }) {
       .then((items) => {
         const gokuTransfo = items.transformations;
         setGokuTransfo(gokuTransfo);
-        setIsLoading(false);
+        setIsLoadingGoku(false);
       })
 
       .catch((error) => {
@@ -45,7 +46,9 @@ export function ApiProvider({ children }) {
   }, []);
 
   return (
-    <ApiContext.Provider value={{ characters, isLoading, gokuTransfo }}>
+    <ApiContext.Provider
+      value={{ characters, isLoadingApi, isLoadingGoku, gokuTransfo }}
+    >
       {children}
     </ApiContext.Provider>
   );
