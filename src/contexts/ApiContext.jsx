@@ -7,7 +7,7 @@ export function ApiProvider({ children }) {
  const [isLoading, setIsLoading] = useState(true);
 
  useEffect(() => {
-   fetch("https://dragonball-api.com/api/characters?limit=50")
+   fetch("https://dragonball-api.com/api/characters?limit=8")
      .then((response) => {
        if (!response.ok) {
          throw new Error("Failed to fetch data");

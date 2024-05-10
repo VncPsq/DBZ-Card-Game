@@ -10,43 +10,45 @@ import goku_normal from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   return (
-    <section className="scoreboard">
-      <article className="dragonBalls">
-        <div>
-          <img src={ball1} alt="DragonBall *" />
-        </div>
-        <div>
-          <img src={ball2} alt="DragonBall **" />
-        </div>
-        <div>
-          <img src={ball3} alt="DragonBall ***" />
-        </div>
-        <div>
-          <img src={ball4} alt="DragonBall ****" />
-        </div>
-        <div>
-          <img src={ball5} alt="DragonBall *****" />
-        </div>
-        <div>
-          <img src={ball6} alt="DragonBall ******" />
-        </div>
-        <div>
-          <img src={ball7} alt="DragonBall *******" />
-        </div>
-        <div className="turtleMaster">
-          <img src={turtleMaster} alt="Turtle master" />
-        </div>
-      </article>
-      <article className="score">
-        <h3>
-          Score :<br /> 00000
-        </h3>
-        <p>Level 1</p>
-      </article>
-      <article className="wrapperAvatar">
-        <img className="avatar" src={goku_normal} alt="Goku" />
-      </article>
-    </section>
+    <article>
+      <section className="scoreboard">
+        <article className="dragonBalls">
+          <div>
+            <img src={ball1} alt="DragonBall *" />
+          </div>
+          <div>
+            <img src={ball2} alt="DragonBall **" />
+          </div>
+          <div>
+            <img src={ball3} alt="DragonBall ***" />
+          </div>
+          <div>
+            <img src={ball4} alt="DragonBall ****" />
+          </div>
+          <div>
+            <img src={ball5} alt="DragonBall *****" />
+          </div>
+          <div>
+            <img src={ball6} alt="DragonBall ******" />
+          </div>
+          <div>
+            <img src={ball7} alt="DragonBall *******" />
+          </div>
+          <div className="turtleMaster">
+            <img src={turtleMaster} alt="Turtle master" />
+          </div>
+        </article>
+        <article className="score">
+          <h3>
+            Score :<br /> 00000
+          </h3>
+          <p>Level 1</p>
+        </article>
+        <article className="wrapperAvatar">
+          <img className="avatar" src={goku_normal} alt="Goku" />
+        </article>
+      </section>
+    </article>
   );
 }
 

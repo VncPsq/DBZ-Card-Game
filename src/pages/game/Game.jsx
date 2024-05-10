@@ -5,12 +5,9 @@ function Game() {
   return (
     <section className="game">
       <h2>Ready to play ?</h2>
-      <article>
-        <ScoreBoard />
-      </article>
-      <article className="playground">
-        <Playground />
-      </article>
+      <ScoreBoard />
+      <h2>Find Bulma</h2>
+      <Playground />
     </section>
   );
 }

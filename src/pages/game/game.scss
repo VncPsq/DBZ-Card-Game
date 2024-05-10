@@ -4,7 +4,7 @@
   width: 90%;
   margin: 0 auto;
 
-  h2 {
+  h2:nth-child(1) {
     margin-top: 10rem;
   }
 
@@ -141,6 +141,7 @@
 
   // component Playground
   .playground {
+    position: relative;
     padding: 2rem;
     background-color: variables.$cloud-color;
     border-radius: 1.2rem;
@@ -156,6 +157,7 @@
     ::-webkit-scrollbar {
       display: none; /* for Chrome, Safari, and Opera */
     }
+
     // cards de personnages
     figure {
       cursor: url(https://cdn.custom-cursor.com/db/15083/32/dragon-ball-super-saiyan-blue-goku-pointer.png),
@@ -244,6 +246,24 @@
         .imgLogo {
           width: 30%;
         }
+      }
+    }
+
+    .modalePlayground {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: variables.$cloud-color;
+
+      .modaleContent {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
