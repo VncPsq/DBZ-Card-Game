@@ -5,6 +5,7 @@ import "../assets/style/index.scss";
 import "../pages/game/game.scss";
 import "../pages/home/home.scss";
 
+
 function App() {
   return (
     <>

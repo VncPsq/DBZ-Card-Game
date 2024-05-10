@@ -252,12 +252,12 @@
   @media screen and (min-width: 799px) {
     .scoreboard {
       padding: 1.2rem 3.6rem;
+      gap: 4rem;
       height: 300px;
-      gap: 2rem;
       overflow-y: hidden;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
       .wrapperAvatar {
         max-height: 100%;
