@@ -1,3 +1,5 @@
+import { useApi } from "../../contexts/ApiContext";
+
 import ball1 from "../../assets/img/dragonballs/ball1.png";
 import ball2 from "../../assets/img/dragonballs/ball2.png";
 import ball3 from "../../assets/img/dragonballs/ball3.png";
@@ -6,9 +8,11 @@ import ball5 from "../../assets/img/dragonballs/ball5.png";
 import ball6 from "../../assets/img/dragonballs/ball6.png";
 import ball7 from "../../assets/img/dragonballs/ball7.png";
 import turtleMaster from "../../assets/img/tortueGeniale.png";
-import goku_normal from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard({ handleStartGame, spinDragonBall }) {
+  const { gokuTransfo } = useApi();
+  console.log(gokuTransfo);
+
   return (
     <article>
       <section className="scoreboard">
@@ -55,7 +59,7 @@ function ScoreBoard({ handleStartGame, spinDragonBall }) {
           <img
             className="avatar"
             onClick={handleStartGame}
-            src={goku_normal}
+            src={gokuTransfo[0].image}
             alt="Goku"
           />
         </article>
