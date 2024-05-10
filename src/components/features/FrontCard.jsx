@@ -1,5 +1,6 @@
 import dbzLogo from "../../assets/img/dbzLogo.png";
 
+
 function FrontCard({ character }) {
   // Define the bg Card
   function setBackground(affiliation) {
