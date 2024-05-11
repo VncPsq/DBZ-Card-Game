@@ -19,18 +19,18 @@ function Rules() {
       </figure>
       {showRules && (
         <>
-          <h3>Thanks A lot</h3>
+          <h3>We need your help, please help us !</h3>
           <p>
-            Bulma has been captured by Frieza ! He's hidding with his Army on
-            Earth. Without her, we can't unleashe the power of the Dragon Balls
-            !
+            Bulma has been captured by Freezer ! He's hidding with his Army on
+            Earth. Without Bulma, we can't unleashe the power of the Dragon
+            Balls !
           </p>
-          <h3>How to save Bulma ?</h3>
+          <h3>How to save Bulma ? Let me tell you</h3>
           <p>
             You will need to pick her's card. By saving her, you will pass a
             level and win 1000 points.
           </p>
-          <h3>How to become a Super Sayian ?</h3>
+          <h3>How to become more powerful ?</h3>
           <p>
             To become a Super Sayian, you need : 2000 points,
             <br />
@@ -49,10 +49,11 @@ function Rules() {
             <br />
             But be careful, If you pick an ennemy's card you lose 300 points
           </p>
-          <h3>How many chances do I Have</h3>
+          <h3>How many chances do I have ?</h3>
           <p>
-            You will have 7 chances to make to bigger score possible, Good Luck
-            !
+            You will have 7 Dragon Balls to make to bigger score possible. Be
+            careful if you pick Freezer, you lose a Dragon Ball. Good Luck my
+            friend !
           </p>
           <Button>Play the game</Button>
         </>
