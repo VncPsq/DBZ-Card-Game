@@ -12,7 +12,7 @@ import turtleMaster from "../../assets/img/tortueGeniale.png";
 import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
-  const { gokuTransfo, isLoadingGoku, handleShuffle } = useApi();
+  const { gokuTransfo, handleShuffle } = useApi();
   const { handleNewLevel, startLevel, score } = useGame();
 
   const handleStarGame = () => {
@@ -66,7 +66,21 @@ function ScoreBoard() {
           <img
             className="avatar"
             onClick={handleStarGame}
-            src={isLoadingGoku ? goku : goku}
+            src={
+              score < 2000
+                ? goku
+                : score >= 2000 && score < 3000
+                ? gokuTransfo[0].image
+                : score >= 3000 && score < 4000
+                ? gokuTransfo[1].image
+                : score >= 4000 && score < 5000
+                ? gokuTransfo[2].image
+                : score >= 5000 && score < 6000
+                ? gokuTransfo[3].image
+                : score >= 6000 && score < 7000
+                ? gokuTransfo[4].image
+                : gokuTransfo[5].image
+            }
             alt="Goku"
           />
         </article>
