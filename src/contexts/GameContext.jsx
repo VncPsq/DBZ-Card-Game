@@ -9,8 +9,22 @@ export function GameProvider({ children }) {
     setStartLevel(true);
   };
 
-  const handleCard = () => {
-    setScore((prevState) => prevState + 1000);
+  const handleCard = (affiliation, name) => {
+    if (
+      affiliation === "Villain" ||
+      (affiliation === "Army of Frieza" && name !== "Freezer") ||
+      affiliation === "Freelancer" ||
+      affiliation === "Pride Troopers" ||
+      affiliation === "Pride Troopers"
+    ) {
+      setScore((prevState) => prevState - 300);
+    } else if (name === "Freezer") {
+      setScore((prevState) => prevState - 1000);
+    } else if (name === "Bulma") {
+      setScore((prevState) => prevState + 1000);
+    } else {
+      setScore((prevState) => prevState + 300);
+    }
   };
 
   return (

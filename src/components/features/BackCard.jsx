@@ -2,13 +2,12 @@ import { useGame } from "../../contexts/GameContext";
 
 import shenron from "../../assets/img/shenronBack.png";
 
-function BackCard({ flipCard }) {
-    const { handleCard } = useGame();
+function BackCard({ flipCard, character }) {
+  const { handleCard } = useGame();
 
   const handleFlip = () => {
     flipCard();
-    handleCard();
-    
+    handleCard(character.affiliation, character.name);
   };
 
   return (
