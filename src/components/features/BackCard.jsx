@@ -8,7 +8,7 @@ function BackCard({ flipCard, character }) {
   const handleFlip = () => {
     flipCard();
     handleCard(character.affiliation, character.name);
-  };
+  }; // Flip the card and handle infos character to set dynamic score
 
   return (
     <figure onClick={handleFlip}>

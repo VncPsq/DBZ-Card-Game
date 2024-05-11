@@ -5,10 +5,12 @@ const GameContext = createContext();
 export function GameProvider({ children }) {
   const [startLevel, setStartLevel] = useState(false); // Init level(unshowModal, spinDragonBall, showScore )
   const [score, setScore] = useState(0); // Init Score
+  const [level, setLevel] = useState(0); // Init Level
   const [dragonBalls, setDragonBalls] = useState(7); // Init DragonBalls
   const handleNewLevel = () => {
     setStartLevel(true);
-  };
+    setLevel((prevState) => prevState + 1);
+  }; // Init movement DragonBall and UnshowModal and Level Number
 
   const handleCard = (affiliation, name) => {
     if (
@@ -21,16 +23,24 @@ export function GameProvider({ children }) {
     } else if (name === "Freezer") {
       setScore((prevState) => prevState - 1000);
       setDragonBalls((prevState) => prevState - 1);
+      setStartLevel(false);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 1000);
     } else {
       setScore((prevState) => prevState + 300);
     }
-  };
+  }; // Flip the card and handle infos character to set dynamic score
 
   return (
     <GameContext.Provider
-      value={{ handleNewLevel, handleCard, score, dragonBalls, startLevel }}
+      value={{
+        handleNewLevel,
+        handleCard,
+        score,
+        dragonBalls,
+        startLevel,
+        level,
+      }}
     >
       {children}
     </GameContext.Provider>

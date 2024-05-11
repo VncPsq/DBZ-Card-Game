@@ -13,11 +13,11 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, handleShuffle } = useApi();
-  const { handleNewLevel, startLevel, score, dragonBalls } = useGame();
+  const { handleNewLevel, startLevel, score, dragonBalls, level } = useGame();
 
   const handleStarGame = () => {
-    handleNewLevel(); // Init movement DragonBall and UnshowModal
-    handleShuffle(); // Suffle Cards in API Context
+    handleNewLevel(); // Game Context
+    handleShuffle(); // API Context
   };
 
   return (
@@ -59,7 +59,7 @@ function ScoreBoard() {
         {startLevel && (
           <article className="score">
             <h3>Score : {score}</h3>
-            <p>Level 1</p>
+            <p>Level {level}</p>
           </article>
         )}
         <article className="wrapperAvatar">
