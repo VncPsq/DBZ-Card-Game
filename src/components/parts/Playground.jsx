@@ -4,7 +4,7 @@ import { useGame } from "../../contexts/GameContext";
 import Card from "../features/Card";
 
 function Playground() {
-  const { characters, isLoadingApi } = useApi();
+  const { sortedCards, isLoadingApi } = useApi();
   const { startGame } = useGame();
 
   return (
@@ -13,7 +13,7 @@ function Playground() {
       style={!startGame ? { overflow: "hidden" } : { overflow: "auto" }}
     >
       {!isLoadingApi ? (
-        characters.map((character) => (
+        sortedCards.map((character) => (
           <Card
             key={`Card ${character.id} | ${character.name}`}
             character={character}

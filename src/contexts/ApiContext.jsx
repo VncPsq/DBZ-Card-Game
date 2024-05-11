@@ -3,8 +3,8 @@ import { useState, useEffect, createContext, useContext } from "react";
 const ApiContext = createContext();
 
 export function ApiProvider({ children }) {
-  const [characters, setCharacters] = useState([]); // Get all Characters
-  const [mandatoryCards, setMandatoryCards] = useState([]); // Get Bulma and Freezer
+  const [characters, setCharacters] = useState([]); // Get all Characters except Bulma and Freezer and Goku
+  const [mandatoryCharacters, setMandatoryCharacters] = useState([]); // Get Bulma and Freezer
   const [isLoadingApi, setIsLoadingApi] = useState(true);
   const [gokuTransfo, setGokuTransfo] = useState([]); // Get all Goku Transfo
   const [isLoadingGoku, setIsLoadingGoku] = useState(true);
@@ -20,15 +20,19 @@ export function ApiProvider({ children }) {
         return response.json();
       })
       .then((items) => {
-        const characters = items.items.filter(
-          (character) => character.name !== "Goku"
+        const AllCharacters = items.items;
+        const characters = AllCharacters.filter(
+          (character) =>
+            character.name !== "Goku" &&
+            character.name !== "Bulma" &&
+            character.name !== "Freezer"
         );
-        const mandatoryCards = characters.filter(
+        const mandatoryCharacters = AllCharacters.filter(
           (character) =>
             character.name === "Bulma" || character.name === "Freezer"
         );
         setCharacters(characters);
-        setMandatoryCards(mandatoryCards);
+        setMandatoryCharacters(mandatoryCharacters);
         setIsLoadingApi(false);
       })
       .catch((error) => {
@@ -64,16 +68,16 @@ export function ApiProvider({ children }) {
 
   const handleShuffle = () => {
     shuffleArray(characters);
-    setSortedCards(characters.slice(0, 8));
+    let draw = characters.slice(0, 6).concat(mandatoryCharacters);
+    setSortedCards(shuffleArray(draw));
   }; // Active shuffleArray
 
-  console.log(sortedCards);
-  console.log(characters);
 
   return (
     <ApiContext.Provider
       value={{
         characters,
+        sortedCards,
         isLoadingApi,
         isLoadingGoku,
         gokuTransfo,
