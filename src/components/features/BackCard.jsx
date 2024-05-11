@@ -2,11 +2,11 @@ import { useGame } from "../../contexts/GameContext";
 
 import shenron from "../../assets/img/shenronBack.png";
 
-function BackCard({ flipCard, character }) {
+function BackCard({ character, setIsFlipped }) {
   const { handleCard } = useGame();
 
   const handleFlip = () => {
-    flipCard();
+    setIsFlipped(true);
     handleCard(character.affiliation, character.name);
   }; // Flip the card and handle infos character to set dynamic score
 
