@@ -12,7 +12,7 @@ import turtleMaster from "../../assets/img/tortueGeniale.png";
 import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
-  const { gokuTransfo, isLoadingGoku } = useApi();
+  const { gokuTransfo, isLoadingGoku, handleShuffle } = useApi();
   const { handleStartGame, spinDragonBall } = useGame();
 
   return (
@@ -60,7 +60,7 @@ function ScoreBoard() {
         <article className="wrapperAvatar">
           <img
             className="avatar"
-            onClick={handleStartGame}
+            onClick={(handleStartGame, handleShuffle)}
             src={isLoadingGoku ? goku : gokuTransfo[0].image}
             alt="Goku"
           />
