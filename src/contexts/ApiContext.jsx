@@ -8,7 +8,48 @@ export function ApiProvider({ children }) {
   const [isLoadingApi, setIsLoadingApi] = useState(true);
   const [gokuTransfo, setGokuTransfo] = useState([]); // Get all Goku Transfo
   const [isLoadingGoku, setIsLoadingGoku] = useState(true);
-  const [sortedCards, setSortedCards] = useState([]); // 8 sorted cards for the level
+  const [sortedCards, setSortedCards] = useState([
+    {
+      id: 1,
+      name: "Goku",
+      image: "https://dragonball-api.com/characters/goku_normal.webp",
+    },
+    {
+      id: 2,
+      name: "Vegeta",
+      image: "https://dragonball-api.com/characters/vegeta_normal.webp",
+    },
+    {
+      id: 3,
+      name: "Piccolo",
+      image: "https://dragonball-api.com/characters/picolo_normal.webp",
+    },
+    {
+      id: 4,
+      name: "Bulma",
+      image: "https://dragonball-api.com/characters/bulma.webp",
+    },
+    {
+      id: 5,
+      name: "Freezer",
+      image: "https://dragonball-api.com/characters/Freezer.webp",
+    },
+    {
+      id: 6,
+      name: "Zarbon",
+      image: "https://dragonball-api.com/characters/zarbon.webp",
+    },
+    {
+      id: 7,
+      name: "Dodoria",
+      image: "https://dragonball-api.com/characters/dodoria.webp",
+    },
+    {
+      id: 8,
+      name: "Ginyu",
+      image: "https://dragonball-api.com/characters/ginyu.webp",
+    },
+  ]); // 8 sorted cards for the level
 
   useEffect(() => {
     // Fetch all the characters
@@ -72,11 +113,9 @@ export function ApiProvider({ children }) {
     setSortedCards(shuffleArray(draw));
   }; // Active shuffleArray
 
-
   return (
     <ApiContext.Provider
       value={{
-        characters,
         sortedCards,
         isLoadingApi,
         isLoadingGoku,

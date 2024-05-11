@@ -13,7 +13,12 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, isLoadingGoku, handleShuffle } = useApi();
-  const { handleStartGame, spinDragonBall } = useGame();
+  const { handleModal, spinDragonBall } = useGame();
+
+  const handleStarGame = () => {
+    handleModal();
+    handleShuffle();
+  };
 
   return (
     <article>
@@ -60,7 +65,7 @@ function ScoreBoard() {
         <article className="wrapperAvatar">
           <img
             className="avatar"
-            onClick={(handleStartGame, handleShuffle)}
+            onClick={handleStarGame}
             src={isLoadingGoku ? goku : gokuTransfo[0].image}
             alt="Goku"
           />
