@@ -21,13 +21,12 @@ function Home() {
 
           <article className="buttons">
             <Button className="btnPrimary">Play the game</Button>
-            <Button className="btnSecondary">See the rules</Button>
           </article>
         </section>
       </article>
       <article>
         <h2>rules</h2>
-        <Rules/>
+        <Rules />
       </article>
     </section>
   );

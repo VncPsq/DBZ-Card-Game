@@ -13,20 +13,21 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, isLoadingGoku, handleShuffle } = useApi();
-  const { handleModal, spinDragonBall } = useGame();
+  const { handleNewLevel, startLevel } = useGame();
 
   const handleStarGame = () => {
-    handleModal();
-    handleShuffle();
+    handleNewLevel(); // Init movement DragonBall and UnshowModal
+    handleShuffle(); // Suffle Cards in API Context
   };
 
+  
   return (
     <article>
       <section className="scoreboard">
         <article
           className="dragonBalls"
           style={
-            spinDragonBall === true
+            startLevel === true
               ? { animation: "dragonBalls-spin infinite 30s linear" }
               : { animation: "none" }
           }
@@ -56,17 +57,17 @@ function ScoreBoard() {
             <img src={turtleMaster} alt="Turtle master" />
           </div>
         </article>
-        <article className="score">
-          <h3>
-            Score :<br /> 00000
-          </h3>
-          <p>Level 1</p>
-        </article>
+        {startLevel && (
+          <article className="score">
+            <h3>Score : 00000</h3>
+            <p>Level 1</p>
+          </article>
+        )}
         <article className="wrapperAvatar">
           <img
             className="avatar"
             onClick={handleStarGame}
-            src={isLoadingGoku ? goku : gokuTransfo[0].image}
+            src={isLoadingGoku ? goku : goku}
             alt="Goku"
           />
         </article>

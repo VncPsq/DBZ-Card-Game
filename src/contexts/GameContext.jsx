@@ -3,16 +3,14 @@ import { useState, createContext, useContext } from "react";
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
-  const [startGame, setStartGame] = useState(false);
-  const [spinDragonBall, setSpinDragonBall] = useState(false);
+  const [startLevel, setStartLevel] = useState(false); // Init level(unshowModal, spinDragonBall, showScore )
 
-  const handleModal = () => {
-    setStartGame(!startGame);
-    setSpinDragonBall(true);
+  const handleNewLevel = () => {
+    setStartLevel(true);
   };
 
   return (
-    <GameContext.Provider value={{ startGame, handleModal, spinDragonBall }}>
+    <GameContext.Provider value={{ handleNewLevel, startLevel }}>
       {children}
     </GameContext.Provider>
   );
