@@ -6,15 +6,13 @@ export function GameProvider({ children }) {
   const [startGame, setStartGame] = useState(false);
   const [spinDragonBall, setSpinDragonBall] = useState(false);
 
-  const handleStartGame = () => {
+  const handleModal = () => {
     setStartGame(!startGame);
     setSpinDragonBall(true);
   };
 
   return (
-    <GameContext.Provider
-      value={{ startGame, handleStartGame, spinDragonBall }}
-    >
+    <GameContext.Provider value={{ startGame, handleModal, spinDragonBall }}>
       {children}
     </GameContext.Provider>
   );
