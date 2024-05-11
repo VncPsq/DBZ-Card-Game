@@ -5,12 +5,12 @@ import Card from "../features/Card";
 
 function Playground() {
   const { sortedCards, isLoadingApi } = useApi();
-  const { startGame } = useGame();
+  const { startLevel } = useGame();
 
   return (
     <article
       className="playground"
-      style={!startGame ? { overflow: "hidden" } : { overflow: "auto" }}
+      style={!startLevel ? { overflow: "hidden" } : { overflow: "auto" }}
     >
       {!isLoadingApi ? (
         sortedCards.map((character) => (
@@ -22,7 +22,7 @@ function Playground() {
       ) : (
         <p>Loading...</p>
       )}
-      {!startGame && <section className="modalePlayground"></section>}
+      {!startLevel && <section className="modalePlayground"></section>}
     </article>
   );
 }

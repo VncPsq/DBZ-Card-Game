@@ -124,6 +124,7 @@
       gap: 1.3rem;
 
       p {
+        margin: 0;
         font-size: 1rem;
         font-weight: 500;
         color: variables.$font-color-bis;
@@ -133,6 +134,7 @@
     .wrapperAvatar {
       max-height: 200px;
       max-width: 300px;
+      cursor: pointer;
       .avatar {
         width: 100%;
       }

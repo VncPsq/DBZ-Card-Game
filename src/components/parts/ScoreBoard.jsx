@@ -12,12 +12,12 @@ import turtleMaster from "../../assets/img/tortueGeniale.png";
 import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
-  const { gokuTransfo, isLoadingGoku, handleShuffle } = useApi();
-  const { handleModal, spinDragonBall } = useGame();
+  const { gokuTransfo, handleShuffle } = useApi();
+  const { handleNewLevel, startLevel, score, dragonBalls, level } = useGame();
 
   const handleStarGame = () => {
-    handleModal();
-    handleShuffle();
+    handleNewLevel(); // Game Context
+    handleShuffle(); // API Context
   };
 
   return (
@@ -26,47 +26,61 @@ function ScoreBoard() {
         <article
           className="dragonBalls"
           style={
-            spinDragonBall === true
+            startLevel === true
               ? { animation: "dragonBalls-spin infinite 30s linear" }
               : { animation: "none" }
           }
         >
-          <div>
+          <div hidden={dragonBalls > 0 ? false : true}>
             <img src={ball1} alt="DragonBall *" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 1 ? false : true}>
             <img src={ball2} alt="DragonBall **" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 2 ? false : true}>
             <img src={ball3} alt="DragonBall ***" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 3 ? false : true}>
             <img src={ball4} alt="DragonBall ****" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 4 ? false : true}>
             <img src={ball5} alt="DragonBall *****" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 5 ? false : true}>
             <img src={ball6} alt="DragonBall ******" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 6 ? false : true}>
             <img src={ball7} alt="DragonBall *******" />
           </div>
           <div className="turtleMaster">
             <img src={turtleMaster} alt="Turtle master" />
           </div>
         </article>
-        <article className="score">
-          <h3>
-            Score :<br /> 00000
-          </h3>
-          <p>Level 1</p>
-        </article>
+        {startLevel && (
+          <article className="score">
+            <h3>Score : {score}</h3>
+            <p>Level {level}</p>
+          </article>
+        )}
         <article className="wrapperAvatar">
           <img
             className="avatar"
             onClick={handleStarGame}
-            src={isLoadingGoku ? goku : gokuTransfo[0].image}
+            src={
+              score < 2000
+                ? goku
+                : score >= 2000 && score < 3000
+                ? gokuTransfo[0].image
+                : score >= 3000 && score < 4000
+                ? gokuTransfo[1].image
+                : score >= 4000 && score < 5000
+                ? gokuTransfo[2].image
+                : score >= 5000 && score < 6000
+                ? gokuTransfo[3].image
+                : score >= 6000 && score < 7000
+                ? gokuTransfo[4].image
+                : gokuTransfo[5].image
+            }
             alt="Goku"
           />
         </article>

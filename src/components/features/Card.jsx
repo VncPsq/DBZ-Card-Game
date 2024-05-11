@@ -4,7 +4,7 @@ import FrontCard from "./FrontCard";
 import ReactCardFlip from "react-card-flip";
 
 function Card({ character }) {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false); // Init the flipping back to front
   const flipCard = () => {
     setIsFlipped(!isFlipped);
   };
@@ -17,7 +17,7 @@ function Card({ character }) {
       flipDirection="horizontal"
     >
       <BackCard character={character} flipCard={flipCard} />
-      <FrontCard character={character}  />
+      <FrontCard character={character} />
     </ReactCardFlip>
   );
 }
