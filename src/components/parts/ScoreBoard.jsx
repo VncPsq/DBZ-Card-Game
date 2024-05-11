@@ -13,7 +13,7 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, handleShuffle } = useApi();
-  const { handleNewLevel, startLevel, score } = useGame();
+  const { handleNewLevel, startLevel, score, dragonBalls } = useGame();
 
   const handleStarGame = () => {
     handleNewLevel(); // Init movement DragonBall and UnshowModal
@@ -31,25 +31,25 @@ function ScoreBoard() {
               : { animation: "none" }
           }
         >
-          <div>
+          <div hidden={dragonBalls > 0 ? false : true}>
             <img src={ball1} alt="DragonBall *" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 1 ? false : true}>
             <img src={ball2} alt="DragonBall **" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 2 ? false : true}>
             <img src={ball3} alt="DragonBall ***" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 3 ? false : true}>
             <img src={ball4} alt="DragonBall ****" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 4 ? false : true}>
             <img src={ball5} alt="DragonBall *****" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 5 ? false : true}>
             <img src={ball6} alt="DragonBall ******" />
           </div>
-          <div>
+          <div hidden={dragonBalls > 6 ? false : true}>
             <img src={ball7} alt="DragonBall *******" />
           </div>
           <div className="turtleMaster">

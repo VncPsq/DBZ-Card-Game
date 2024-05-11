@@ -5,6 +5,7 @@ const GameContext = createContext();
 export function GameProvider({ children }) {
   const [startLevel, setStartLevel] = useState(false); // Init level(unshowModal, spinDragonBall, showScore )
   const [score, setScore] = useState(0); // Init Score
+  const [dragonBalls, setDragonBalls] = useState(7); // Init DragonBalls
   const handleNewLevel = () => {
     setStartLevel(true);
   };
@@ -14,12 +15,12 @@ export function GameProvider({ children }) {
       affiliation === "Villain" ||
       (affiliation === "Army of Frieza" && name !== "Freezer") ||
       affiliation === "Freelancer" ||
-      affiliation === "Pride Troopers" ||
       affiliation === "Pride Troopers"
     ) {
       setScore((prevState) => prevState - 300);
     } else if (name === "Freezer") {
       setScore((prevState) => prevState - 1000);
+      setDragonBalls((prevState) => prevState - 1);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 1000);
     } else {
@@ -29,7 +30,7 @@ export function GameProvider({ children }) {
 
   return (
     <GameContext.Provider
-      value={{ handleNewLevel, handleCard, score, startLevel }}
+      value={{ handleNewLevel, handleCard, score, dragonBalls, startLevel }}
     >
       {children}
     </GameContext.Provider>
