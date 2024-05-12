@@ -12,6 +12,7 @@ export function GameProvider({ children }) {
   const handleNewLevel = () => {
     setStartLevel(true);
     setLevel((prevState) => prevState + 1);
+    setResetCards(false);
   }; // Init movement DragonBall and UnshowModal and Level Number and force return BackCard
 
   const handleCard = (affiliation, name) => {
@@ -26,7 +27,9 @@ export function GameProvider({ children }) {
       setScore((prevState) => prevState - 1000);
       setDragonBalls((prevState) => prevState - 1);
       setStartLevel(false);
-      setResetCards(true);
+      setTimeout(() => {
+        setResetCards(true);
+      }, 3000);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 1000);
     } else {
