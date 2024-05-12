@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useGame } from "../../contexts/GameContext";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCard";
 import ReactCardFlip from "react-card-flip";
 
 function Card({ character }) {
+  const { resetCards } = useGame();
   const [isFlipped, setIsFlipped] = useState(false); // Init the flipping back to front
-  const flipCard = () => {
-    setIsFlipped(!isFlipped);
-  };
+
+  useEffect(() => {
+    setIsFlipped(false);
+  }, [resetCards]); // Force return card at each level
 
   return (
     <ReactCardFlip
@@ -16,7 +19,7 @@ function Card({ character }) {
       isFlipped={isFlipped}
       flipDirection="horizontal"
     >
-      <BackCard character={character} flipCard={flipCard} />
+      <BackCard character={character} setIsFlipped={setIsFlipped} />
       <FrontCard character={character} />
     </ReactCardFlip>
   );

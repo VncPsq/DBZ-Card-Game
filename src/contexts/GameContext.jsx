@@ -7,10 +7,13 @@ export function GameProvider({ children }) {
   const [score, setScore] = useState(0); // Init Score
   const [level, setLevel] = useState(0); // Init Level
   const [dragonBalls, setDragonBalls] = useState(7); // Init DragonBalls
+  const [resetCards, setResetCards] = useState(false); // Reset flipped cards
+
   const handleNewLevel = () => {
     setStartLevel(true);
     setLevel((prevState) => prevState + 1);
-  }; // Init movement DragonBall and UnshowModal and Level Number
+    setResetCards(false);
+  }; // Init movement DragonBall and UnshowModal and Level Number and force return BackCard
 
   const handleCard = (affiliation, name) => {
     if (
@@ -24,6 +27,9 @@ export function GameProvider({ children }) {
       setScore((prevState) => prevState - 1000);
       setDragonBalls((prevState) => prevState - 1);
       setStartLevel(false);
+      setTimeout(() => {
+        setResetCards(true);
+      }, 3000);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 1000);
     } else {
@@ -40,6 +46,7 @@ export function GameProvider({ children }) {
         dragonBalls,
         startLevel,
         level,
+        resetCards,
       }}
     >
       {children}
