@@ -7,7 +7,7 @@ function Game() {
   const { resumePick } = useGame();
   return (
     <section className="game">
-      <h2>Ready to play ?</h2>
+      <h2 id="scoreboard">Ready to play ?</h2>
       <ScoreBoard />
       <h2>{resumePick}</h2>
 
