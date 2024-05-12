@@ -1,6 +1,6 @@
 import { useApi } from "../../contexts/ApiContext";
 import { useGame } from "../../contexts/GameContext";
-
+import easterEgg from "../../assets/eaterEgg/Kamehameha.mp3";
 import ball1 from "../../assets/img/dragonballs/ball1.png";
 import ball2 from "../../assets/img/dragonballs/ball2.png";
 import ball3 from "../../assets/img/dragonballs/ball3.png";
@@ -15,6 +15,11 @@ function ScoreBoard() {
   const { gokuTransfo, handleShuffle } = useApi();
   const { handleNewLevel, startLevel, score, dragonBalls, level, disableGoku } =
     useGame();
+  let audio = new Audio(easterEgg);
+
+  const handleEasterEgg = () => {
+    audio.play();
+  };
 
   const handleStarGame = () => {
     handleNewLevel(); // Game Context
@@ -54,7 +59,11 @@ function ScoreBoard() {
             <img src={ball7} alt="DragonBall *******" />
           </div>
           <div className="turtleMaster">
-            <img src={turtleMaster} alt="Turtle master" />
+            <img
+              src={turtleMaster}
+              onClick={handleEasterEgg}
+              alt="Turtle master"
+            />
           </div>
         </article>
         {startLevel && (
