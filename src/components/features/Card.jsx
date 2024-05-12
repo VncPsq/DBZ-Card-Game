@@ -5,14 +5,15 @@ import FrontCard from "./FrontCard";
 import ReactCardFlip from "react-card-flip";
 
 function Card({ character }) {
-  const { returnCards } = useGame();
+  const { resetCards } = useGame();
   const [isFlipped, setIsFlipped] = useState(false); // Init the flipping back to front
+  console.log(`${character.name} est retourné : ${isFlipped}`);
 
   return (
     <ReactCardFlip
       flipSpeedBackToFront={2}
       flipSpeedFrontToBack={2}
-      isFlipped={returnCards === false ? returnCards : isFlipped}
+      isFlipped={resetCards ? true : isFlipped}
       flipDirection="horizontal"
     >
       <BackCard character={character} setIsFlipped={setIsFlipped} />

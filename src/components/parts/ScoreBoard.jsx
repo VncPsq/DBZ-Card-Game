@@ -12,20 +12,12 @@ import turtleMaster from "../../assets/img/tortueGeniale.png";
 import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
-  const { gokuTransfo, handleShuffle,  } = useApi();
-  const {
-    handleNewLevel,
-    startLevel,
-    score,
-    dragonBalls,
-    level,
-    handleReturnCards,
-  } = useGame();
+  const { gokuTransfo, handleShuffle } = useApi();
+  const { handleNewLevel, startLevel, score, dragonBalls, level } = useGame();
 
   const handleStarGame = () => {
     handleNewLevel(); // Game Context
     handleShuffle(); // API Context
-    handleReturnCards();
   };
 
   return (
