@@ -45,7 +45,7 @@ function Rules() {
           </p>
           <h3>How to win more points ?</h3>
           <p>
-            If you pick a friend's card you earn : 300 extra points,
+            If you pick a friend's card you earn : 500 extra points,
             <br />
             But be careful, If you pick an ennemy's card you lose 300 points
           </p>

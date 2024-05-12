@@ -10,7 +10,7 @@ function Game() {
       <h2>Ready to play ?</h2>
       <ScoreBoard />
       {!startLevel ? (
-        <h2>Touch San Goku to start the level</h2>
+        <h2>Touch San Goku to start</h2>
       ) : (
         <h2>Find Bulma, beware of Freezer !</h2>
       )}
