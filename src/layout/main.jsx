@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ApiProvider } from "../contexts/ApiContext";
 import App from "./App.jsx";
 import Home from "../pages/home/Home";
-import About from "../pages/about/About";
 import Game from "../pages/game/Game";
 import { GameProvider } from "../contexts/GameContext.jsx";
 
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
       {
         path: "/game",
         element: <Game />,
-      },
-      {
-        path: "/about",
-        element: <About />,
       },
     ],
   },
