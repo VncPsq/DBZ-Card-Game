@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from "react";
+import PropTypes from "prop-types";
 
 const GameContext = createContext();
 
@@ -82,5 +83,9 @@ export function GameProvider({ children }) {
     </GameContext.Provider>
   );
 }
+
+GameProvider.propTypes = {
+  children: PropTypes.object,
+};
 
 export const useGame = () => useContext(GameContext);

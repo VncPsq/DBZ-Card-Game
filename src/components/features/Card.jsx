@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useGame } from "../../contexts/GameContext";
 import BackCard from "./BackCard";
@@ -24,5 +25,9 @@ function Card({ character }) {
     </ReactCardFlip>
   );
 }
+
+Card.propTypes = {
+  character: PropTypes.object,
+};
 
 export default Card;
