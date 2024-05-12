@@ -1,4 +1,5 @@
 import { useState, createContext, useContext } from "react";
+
 import PropTypes from "prop-types";
 
 const GameContext = createContext();
@@ -53,6 +54,7 @@ export function GameProvider({ children }) {
       setTimeout(() => {
         setResetCards(true);
         setDisableGoku(false);
+        scrollTo(0, 0);
       }, 2000);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 500);
@@ -63,6 +65,7 @@ export function GameProvider({ children }) {
       setTimeout(() => {
         setResetCards(true);
         setDisableGoku(false);
+        scrollTo(0, 0);
       }, 2000);
     } else {
       setScore((prevState) => prevState + 500);
