@@ -21,14 +21,14 @@ function Rules() {
         <>
           <h3>We need your help, please help us !</h3>
           <p>
-            Bulma has been captured by Freezer ! He's hidding with his Army on
-            Earth. Without Bulma, we can't unleashe the power of the Dragon
-            Balls !
+            Bulma has been captured by Freezer ! He&apos;s hidding with his Army
+            on Earth. Without Bulma, we can&apos;t unleashe the power of the
+            Dragon Balls !
           </p>
           <h3>How to save Bulma ? Let me tell you</h3>
           <p>
-            You will need to pick her's card. By saving her, you will pass a
-            level and win 1000 points.
+            You will need to pick her&apos;s card. By saving her, you will pass
+            a level and win 1000 points.
           </p>
           <h3>How to become more powerful ?</h3>
           <p>
@@ -45,9 +45,10 @@ function Rules() {
           </p>
           <h3>How to win more points ?</h3>
           <p>
-            If you pick a friend's card you earn : 500 extra points,
+            If you pick a friend&apos;s card you earn : 500 extra points,
             <br />
-            But be careful, If you pick an ennemy's card you lose 300 points
+            But be careful, If you pick an ennemy&apos;s card you lose 300
+            points
           </p>
           <h3>How many chances do I have ?</h3>
           <p>

@@ -1,11 +1,12 @@
 import { useState, useEffect, createContext, useContext } from "react";
+import PropTypes from "prop-types";
 
 const ApiContext = createContext();
 
 export function ApiProvider({ children }) {
   const [characters, setCharacters] = useState([]); // Get all Characters except Bulma and Freezer and Goku
   const [mandatoryCharacters, setMandatoryCharacters] = useState([]); // Get Bulma and Freezer
-  const [isLoadingApi, setIsLoadingApi] = useState(true); 
+  const [isLoadingApi, setIsLoadingApi] = useState(true);
   const [gokuTransfo, setGokuTransfo] = useState([]); // Get all Goku Transfo
   const [sortedCards, setSortedCards] = useState([
     {
@@ -124,5 +125,9 @@ export function ApiProvider({ children }) {
     </ApiContext.Provider>
   );
 }
+
+ApiProvider.propTypes = {
+  children: PropTypes.object,
+};
 
 export const useApi = () => useContext(ApiContext);
