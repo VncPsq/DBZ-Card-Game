@@ -8,10 +8,18 @@ export function GameProvider({ children }) {
   const [level, setLevel] = useState(1); // Init Level
   const [dragonBalls, setDragonBalls] = useState(7); // Init DragonBalls
   const [resetCards, setResetCards] = useState(false); // Reset flipped cards
+  const [disableGoku, setDisableGoku] = useState(false); // Block Click on Goku
 
   const handleNewLevel = () => {
-    setStartLevel(true);
-    setResetCards(false);
+    if (dragonBalls !== 0) {
+      setStartLevel(true);
+      setResetCards(false);
+    } else {
+      alert(`Your Game is over, well done San Goku`);
+      setScore(0);
+      setDragonBalls(7);
+      setLevel(1);
+    }
   }; // Init movement DragonBall and UnshowModal and Level Number and force return BackCard
 
   const handleCard = (affiliation, name) => {
@@ -26,15 +34,31 @@ export function GameProvider({ children }) {
       setScore((prevState) => prevState - 300);
       setDragonBalls((prevState) => prevState - 1);
       setStartLevel(false);
+      setDisableGoku(true);
+
       setTimeout(() => {
         setResetCards(true);
+        setDisableGoku(false);
+        alert(
+          `Oh no you found Freezer !
+          Retry this level, your score is ${score - 300}.
+          You still have ${dragonBalls - 1} DragonBalls`
+        );
       }, 2000);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 500);
       setLevel((prevState) => prevState + 1);
       setStartLevel(false);
+      setDisableGoku(true);
       setTimeout(() => {
         setResetCards(true);
+        setDisableGoku(false);
+        alert(
+          `Well done you found Bulma !
+          Let's go to the level ${level + 1}!
+          Your score is ${score + 500}.
+          You still have ${dragonBalls} DragonBalls `
+        );
       }, 2000);
     } else {
       setScore((prevState) => prevState + 500);
@@ -51,6 +75,7 @@ export function GameProvider({ children }) {
         startLevel,
         level,
         resetCards,
+        disableGoku,
       }}
     >
       {children}

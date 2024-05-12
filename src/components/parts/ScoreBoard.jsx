@@ -13,7 +13,8 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, handleShuffle } = useApi();
-  const { handleNewLevel, startLevel, score, dragonBalls, level } = useGame();
+  const { handleNewLevel, startLevel, score, dragonBalls, level, disableGoku } =
+    useGame();
 
   const handleStarGame = () => {
     handleNewLevel(); // Game Context
@@ -64,6 +65,11 @@ function ScoreBoard() {
         )}
         <article className="wrapperAvatar">
           <img
+            style={
+              disableGoku === true
+                ? { pointerEvents: "none" }
+                : { pointerEvents: "auto" }
+            }
             className="avatar"
             onClick={handleStarGame}
             src={

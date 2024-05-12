@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 function Button({ children }) {
   const navigate = useNavigate();
   const handleNavigation = () => {
-    navigate("/game");
+    navigate("/game#game");
   };
 
   return (
