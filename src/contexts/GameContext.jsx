@@ -10,20 +10,30 @@ export function GameProvider({ children }) {
   const [dragonBalls, setDragonBalls] = useState(7); // Init DragonBalls
   const [resetCards, setResetCards] = useState(false); // Reset flipped cards
   const [disableGoku, setDisableGoku] = useState(false); // Block Click on Goku
+  const [resumePick, setResumePick] = useState("Touch Goku to start"); // Indication H2 Game
+  const [gameOver, setGameOver] = useState(false); //  GameOver
 
   const handleNewLevel = () => {
     if (dragonBalls !== 0) {
       setStartLevel(true);
       setResetCards(false);
+      setResumePick("Find Bulma Goku !");
     } else {
-      alert(`Your Game is over, well done San Goku`);
+      setStartLevel(false);
+      setResumePick("Touch Goku to start a new Game");
       setScore(0);
       setDragonBalls(7);
+      setGameOver(false);
       setLevel(1);
     }
   }; // Init movement DragonBall and UnshowModal and Level Number and force return BackCard
 
   const handleCard = (affiliation, name) => {
+    setResumePick(
+      `You found ${name} ${
+        name === "Freezer" && dragonBalls === 1 ? "| Game Over" : ""
+      } !`
+    );
     if (
       affiliation === "Villain" ||
       (affiliation === "Army of Frieza" && name !== "Freezer") ||
@@ -35,31 +45,24 @@ export function GameProvider({ children }) {
       setScore((prevState) => prevState - 300);
       setDragonBalls((prevState) => prevState - 1);
       setStartLevel(false);
+      if (dragonBalls === 1) {
+        setGameOver(true);
+      }
       setDisableGoku(true);
 
       setTimeout(() => {
         setResetCards(true);
         setDisableGoku(false);
-        alert(
-          `Oh no you found Freezer !
-          Retry this level, your score is ${score - 300}.
-          You still have ${dragonBalls - 1} DragonBalls`
-        );
       }, 2000);
     } else if (name === "Bulma") {
       setScore((prevState) => prevState + 500);
       setLevel((prevState) => prevState + 1);
       setStartLevel(false);
       setDisableGoku(true);
+
       setTimeout(() => {
         setResetCards(true);
         setDisableGoku(false);
-        alert(
-          `Well done you found Bulma !
-          Let's go to the level ${level + 1}!
-          Your score is ${score + 500}.
-          You still have ${dragonBalls} DragonBalls `
-        );
       }, 2000);
     } else {
       setScore((prevState) => prevState + 500);
@@ -77,6 +80,8 @@ export function GameProvider({ children }) {
         level,
         resetCards,
         disableGoku,
+        resumePick,
+        gameOver,
       }}
     >
       {children}

@@ -13,8 +13,15 @@ import goku from "../../assets/img/goku_normal.webp";
 
 function ScoreBoard() {
   const { gokuTransfo, handleShuffle } = useApi();
-  const { handleNewLevel, startLevel, score, dragonBalls, level, disableGoku } =
-    useGame();
+  const {
+    handleNewLevel,
+    startLevel,
+    score,
+    dragonBalls,
+    level,
+    disableGoku,
+    gameOver,
+  } = useGame();
   let audio = new Audio(easterEgg);
 
   const handleEasterEgg = () => {
@@ -66,7 +73,7 @@ function ScoreBoard() {
             />
           </div>
         </article>
-        {startLevel && (
+        {(startLevel || gameOver) && (
           <article className="score">
             <h3>Score : {score}</h3>
             <p>Level {level}</p>
