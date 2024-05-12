@@ -25,23 +25,24 @@ function Rules() {
             on Earth. Without Bulma, we can&apos;t unleashe the power of the
             Dragon Balls !
           </p>
-          <h3>How to save Bulma ? Let me tell you</h3>
+          <h3>How to save Bulma ?</h3>
           <p>
-            You will need to pick her&apos;s card. By saving her, you will pass
-            a level and win 1000 points.
+            You will need to pick her card. By saving her, you will pass a level
+            and win 1000 points.
           </p>
           <h3>How to become more powerful ?</h3>
           <p>
             To become a Super Sayian, you need : 2000 points,
             <br />
-            To become a Super Sayian 2, you need : 5000 points,
+            To become a Super Sayian 2, you need : 3000 points,
             <br />
-            To become a Super Sayian 3, you need : 7000 points,
+            To become a Super Sayian 3, you need : 4000 points,
             <br />
-            To become a Super Sayian 4, you need : 8000 points,
+            To become a Super Sayian 4, you need : 5000 points,
             <br />
-            To become a Super Sayian 5, you need : 10000 points,
+            To become a Super Sayian 5, you need : 6000 points,
             <br />
+            To become a Super Sayian Ultra, you need : 7000 points,
           </p>
           <h3>How to win more points ?</h3>
           <p>
@@ -50,9 +51,9 @@ function Rules() {
             But be careful, If you pick an ennemy&apos;s card you lose 300
             points
           </p>
-          <h3>How many chances do I have ?</h3>
+          <h3>How many chances ?</h3>
           <p>
-            You will have 7 Dragon Balls to make to bigger score possible. Be
+            You will have 7 Dragon Balls to make the bigger score possible. Be
             careful if you pick Freezer, you lose a Dragon Ball. Good Luck my
             friend !
           </p>

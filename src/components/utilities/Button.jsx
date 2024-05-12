@@ -4,6 +4,7 @@ function Button({ children }) {
   const navigate = useNavigate();
   const handleNavigation = () => {
     navigate("/game");
+    scrollTo(0, 0);
   };
 
   return (
