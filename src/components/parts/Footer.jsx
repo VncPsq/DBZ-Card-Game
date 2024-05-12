@@ -7,8 +7,12 @@ function Footer() {
         property of their authors.
       </p>
       <p>
-        Developers: Vincent Pasquiou. Game created in React JS | Dragon Ball Z
-        Card Game © 2024
+        Developer:{" "}
+        <a href="https://github.com/VncPsq" target="_blank">
+          Vincent Pasquiou
+        </a>
+        <br />
+        Game created in React JS | Dragon Ball Z Card Game © 2024
       </p>
     </footer>
   );

@@ -7,7 +7,6 @@ function Nav() {
       <img src={gohan_kid} alt="Gohan" />
       <div className="navigation">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
         <Link to="/game">Game</Link>
       </div>
     </nav>
