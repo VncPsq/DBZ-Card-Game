@@ -22,11 +22,11 @@ function ScoreBoard() {
     disableGoku,
     gameOver,
   } = useGame();
-  let audio = new Audio(easterEgg);
 
+  let audio = new Audio(easterEgg);
   const handleEasterEgg = () => {
     audio.play();
-  };
+  }; //Easter Egg turtleMaster
 
   const handleStarGame = () => {
     handleNewLevel(); // Game Context
